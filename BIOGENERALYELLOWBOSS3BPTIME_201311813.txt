@@ -1,0 +1,2261 @@
+[General]
+Description=BIOGENERALYELLOWBOSS3BPTIME
+BeginHotkey=121
+BeginHotkeyMod=0
+PauseHotkey=0
+PauseHotkeyMod=0
+StopHotkey=123
+StopHotkeyMod=0
+RunOnce=1
+EnableWindow=
+Enable=1
+AutoRun=0
+[Repeat]
+Type=0
+Number=5000
+[Relative]
+SetupOCXFile=
+[Comment]
+Content=
+
+[Script]
+//<0 >0
+dim A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,chain1,chain2,chain3,chain4,chain5,chain6,chain7,chain8,chain9,chain10,chain1111,chain1212,chain1313,chain1414,chain1515,chain1616,chain1717,chain1818,chain1919,chain2020
+dim skip
+dim rubbish,rubbishD
+dim count
+For 5000
+    //war decision
+    Rem STARTBIO
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\warDecision.bmp",1,war1,war2)
+    If war1>0
+        MoveTo war1,war2
+        Delay 1000
+        If war1>0
+            LeftClick 1
+            Delay 10000
+            LeftClick 1
+            //win
+            Delay 10000
+            LeftClick 1
+            //stage clear
+            Delay 10000
+            For 30
+                LeftClick 1
+                Delay 2000
+            EndFor 
+        EndIf 
+    EndIf 
+    //helping others
+    For 100
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\helpOthers.bmp",1,othersHelp1,othersHelp2)
+        Delay 10
+        If othersHelp1>0
+            MoveTo othersHelp1,othersHelp2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+        EndIf 
+    EndFor 
+    //blueMoveDecision
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\move.bmp",1,intE,intF)
+    If intE>0
+        MoveTo intE,intF
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //TREASURE, MOVING OR REDMOVE DECISION
+    //treasureMoveDecision
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\treasure.bmp",1,t1,t2)
+    If t1>0
+        MoveTo t1,t2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //almost no PP left or In Moving State
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\almostNoWater.bmp",1,water1,water2)
+    If water1>0
+        MoveTo water1,water2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //redMoveDecision
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\moveDecision.bmp",1,intA,intB)
+    MoveTo intA,intB
+    Delay 3000
+    If intA>0
+        //choose move direction
+        //A
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atA.bmp",1,atA1,atA2)
+        MoveTo atA1,atA2
+        Delay 1000
+        If atA1>0
+            A=1
+            If B=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CMov.bmp",1,CMov1,CMov2)
+                MoveTo CMov1,CMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEA
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEA
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //B
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atB.bmp",1,atB1,atB2)
+        MoveTo atB1,atB2
+        If atB1>0
+            B=1
+            If C=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DMov.bmp",1,DMov1,DMov2)
+                MoveTo DMov1,DMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEB
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEB
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //C
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atC.bmp",1,atC1,atC2)
+        MoveTo atC1,atC2
+        If atC1>0
+            C=1
+            If D=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\EMov.bmp",1,EMov1,EMov2)
+                MoveTo EMov1,EMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEC
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEC
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //D
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atD.bmp",1,atD1,atD2)
+        MoveTo atD1,atD2
+        Delay 3000
+        If atD1>0
+            D=1
+            If E=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\FMov.bmp",1,FMov1,FMov2)
+                MoveTo FMov1,FMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVED
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVED
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //E
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atE.bmp",1,atE1,atE2)
+        MoveTo atE1,atE2
+        If atE1>0
+            E=1
+            If F=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\GMov.bmp",1,GMov1,GMov2)
+                MoveTo GMov1,GMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEE
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEE
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //F
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atF.bmp",1,atF1,atF2)
+        MoveTo atF1,atF2
+        If atF1>0
+            F=1
+            If G=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\HMov.bmp",1,HMov1,HMov2)
+                MoveTo HMov1,HMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEF
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEF
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //G
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atG.bmp",1,atG1,atG2)
+        MoveTo atG1,atG2
+        If atG1>0
+            G=1
+            If H=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\IMov.bmp",1,IMov1,IMov2)
+                MoveTo IMov1,IMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEG
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEG
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //H
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atH.bmp",1,atH1,atH2)
+        MoveTo atH1,atH2
+        If atH1>0
+            H=1
+            If I=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\JMov.bmp",1,JMov1,JMov2)
+                MoveTo JMov1,JMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEH
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEH
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //I
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atI.bmp",1,atI1,atI2)
+        MoveTo atI1,atI2
+        If atI1>0
+            I=1
+            If J=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\KMov.bmp",1,KMov1,KMov2)
+                MoveTo KMov1,KMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEI
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEI
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //J
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atJ.bmp",1,atJ1,atJ2)
+        MoveTo atJ1,atJ2
+        If atJ1>0
+            J=1
+            If K=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\LMov.bmp",1,LMov1,LMov2)
+                MoveTo LMov1,LMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEJ
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEJ
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //K
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atK.bmp",1,atK1,atK2)
+        MoveTo atK1,atK2
+        If atK1>0
+            K=1
+            If L=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\MMov.bmp",1,MMov1,MMov2)
+                MoveTo MMov1,MMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEK
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEK
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //L
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atL.bmp",1,atL1,atL2)
+        MoveTo atL1,atL2
+        If atL1>0
+            L=1
+            If M=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\NMov.bmp",1,NMov1,NMov2)
+                MoveTo NMov1,NMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEL
+            Else 
+                /////////////////////////////////////////////////////////////////////////////////
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\MMov.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEL
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //M
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atM.bmp",1,atM1,atM2)
+        MoveTo atM1,atM2
+        Delay 3000
+        If atM1>0
+            M=1
+            If N=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\OMov.bmp",1,OMov1,OMov2)
+                MoveTo OMov1,OMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEM
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                //M    //M    //M    //M
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEM
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //N
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atN.bmp",1,atN1,atN2)
+        MoveTo atN1,atN2
+        Delay 3000
+        If atN1>0
+            N=1
+            If O=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\PMov.bmp",1,PMov1,PMov2)
+                MoveTo PMov1,PMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEN
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEN
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //O
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atO.bmp",1,atO1,atO2)
+        MoveTo atO1,atO2
+        If atO1>0
+            O=1
+            If P=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\QMov.bmp",1,QMov1,QMov2)
+                MoveTo QMov1,QMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEO
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEO
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //P
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atP.bmp",1,atP1,atP2)
+        MoveTo atP1,atP2
+        If atP1>0
+            P=1
+            If Q=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RMov.bmp",1,RMov1,RMov2)
+                MoveTo RMov1,RMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEP
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEP
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //Q
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atQ.bmp",1,atQ1,atQ2)
+        MoveTo atQ1,atQ2
+        If atQ1>0
+            Q=1
+            If R=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SMov.bmp",1,SMov1,SMov2)
+                MoveTo SMov1,SMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEQ
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEQ
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //R
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atR.bmp",1,atR1,atR2)
+        MoveTo atR1,atR2
+        Delay 3000
+        If atR1>0
+            R=1
+            If S=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TMov.bmp",1,TMov1,TMov2)
+                MoveTo TMov1,TMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVER
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVER
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //S
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atS.bmp",1,atS1,atS2)
+        MoveTo atS1,atS2
+        Delay 3000
+        If atS1>0
+            S=1
+            If T=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\UMov.bmp",1,UMov1,UMov2)
+                MoveTo UMov1,UMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVES
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVES
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //T
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atT.bmp",1,atT1,atT2)
+        MoveTo atT1,atT2
+        Delay 3000
+        If atT1>0
+            T=1
+            If U=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\VMov.bmp",1,VMov1,VMov2)
+                MoveTo VMov1,VMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVET
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVET
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+        //U
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\atU.bmp",1,atU1,atU2)
+        MoveTo atU1,atU2
+        Delay 3000
+        If atU1>0
+            U=1
+            If V=1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WMov.bmp",1,VMov1,VMov2)
+                MoveTo VMov1,VMov2
+                LeftClick 1
+                Delay 3000
+                Goto REDMOVEU
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bossCoordinate.bmp",1,boss1,boss2)
+                MoveTo boss1,boss2
+                LeftClick 1
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\boss2.bmp",1,bossB1,bossB2)
+                MoveTo bossB1,bossB2
+                LeftClick 1
+                Delay 3000
+                Rem REDMOVEU
+                MoveTo intA,intB
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+    EndIf 
+    //FORWARD or INVESTIGATION
+    //forward
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\full.bmp",1,full1,full2)
+    MoveTo full1,full2
+    If full1>0
+        Delay 2000
+        For 7
+            For 100
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\forward.bmp",1,intC,intD)
+                Delay 10
+                If intC>0
+                    Goto NEXTFULL
+                EndIf 
+            EndFor 
+            Rem NEXTFULL
+            MoveTo intC,intD
+            LeftClick 1
+            Delay 1500
+        EndFor 
+    EndIf 
+    For 1
+        For 100
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\forward.bmp",1,intC,intD)
+            Delay 10
+            If intC>0
+                Goto NEXT
+            EndIf 
+        EndFor 
+        Rem NEXT
+        MoveTo intC,intD
+        If skip=0
+            //     LeftClick 1
+            skip=2
+        Else 
+            skip=skip-1
+        EndIf 
+        Delay 3000
+    EndFor 
+    //treasure investigation
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\investigate.bmp",1,in1,in2)
+    If in1>0
+        MoveTo in1,in2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //FINISH WALKING, 3 SITUATION: 1. SUDDEN BOSS APPEAR 2.LAST STAGE BOSS 3. LEVELUP
+    //suddenBoss (continue to walk and fight later)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\suddenBoss.bmp",1,boss1,boss2)
+    If boss1>0
+        MoveTo boss1,boss2
+        Goto BP
+    EndIf 
+    //normal enemy grey
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\greyEnemy.bmp",1,grey1,grey2)
+    If grey1>0
+        MoveTo grey1,grey2
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    //normal enemy red
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\redEnemy.bmp",1,red1,red2)
+    If red1>0
+        MoveTo red1,red2
+        LeftClick 1
+        Delay 1000
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    //skip
+    For 10
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\skip.bmp",1,skip1,skip2)
+        If skip1>0
+            MoveTo skip1,skip2
+            LeftClick 1
+            Delay 3000
+        EndIf 
+    EndFor 
+    //continue
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\continueStory.bmp",0.9,continue1,continue2)
+    If continue1>0
+        MoveTo continue1,continue2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //lastStageBoss
+    Rem lastStageBoss
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\lastStageBoss.bmp",1,intI,intJ)
+    MoveTo intI,intJ
+    Delay 1000
+    If intI>0
+        //boss
+        Rem warDecision
+        LeftClick 1
+        Delay 2000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\lastStageBoss.bmp",1,int2I,int2J)
+        If int2I>0
+            Goto UPWARD
+        EndIf 
+        Delay 10000
+        LeftClick 1
+        //win
+        Delay 10000
+        LeftClick 1
+        //stage clear
+        Delay 10000
+        For 30
+            LeftClick 1
+            Delay 2000
+        EndFor 
+    EndIf 
+    //go to next stage (2 options)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\goNextStage.bmp",1,nana1,nana2)
+    If nana1>0
+        MoveTo nana1,nana2
+        Delay 3000
+        LeftClick 1
+        Delay 3000
+        A=0
+        B=0
+        C=0
+        D=0
+        E=0
+        F=0
+        G=0
+        H=0
+        I=0
+        J=0
+        K=0
+        L=0
+        M=0
+        N=0
+        O=0
+        P=0
+        Q=0
+        R=0
+        S=0
+        T=0
+        U=0
+        V=0
+        W=0
+        X=0
+        Y=0
+        Z=0
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\goNextStage2.bmp",1,Next1,Next2)
+    If Next1>0
+        MoveTo Next1,Next2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //shithole
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\shithole.bmp",0.9,shit1,shit2)
+    If shit1>0
+        MoveTo shit1,shit2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //levelUp
+    For 100
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\levelUpSilver.bmp",0.7,intK,intL)
+        Delay 10
+        If intK>0
+            MoveTo intK,intL
+            Delay 2000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\levelUp.bmp",0.7,levelup1,levelup2)
+            MoveTo levelup1,levelup2
+            LeftClick 1
+            Delay 3000
+            Goto FINISHLEVELUP
+        EndIf 
+    EndFor 
+    Rem FINISHLEVELUP
+    //FIGHT THE BOSS
+    Rem CHAINFIGHT
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\VS.bmp",1,vs1,vs2)
+    MoveTo vs1,vs2
+    LeftClick 1
+    Delay 2000
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\warFail.bmp",1,fail1,fail2)
+    If fail1>0
+        MoveTo fail1,fail2
+        LeftClick 1
+        Delay 2000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\newBossCome.bmp",1,nbc1,nbc2)
+        If nbc1>0
+            MoveTo nbc1,nbc2
+            LeftClick 1
+            Delay 2000
+            Goto BP
+        EndIf 
+        Goto UPWARD
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\warFinish.bmp",1,finish1,finish2)
+    If finish1>0
+        MoveTo finish1,finish2
+        LeftClick 1
+        Delay 2000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\newBossCome.bmp",1,nbc1,nbc2)
+        If nbc1>0
+            MoveTo nbc1,nbc2
+            LeftClick 1
+            Delay 2000
+            Goto BP
+        EndIf 
+        Goto UPWARD
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BOSS.bmp",1,SS1,SS2)
+    MoveTo SS1,SS2
+    If SS1>0
+        //bossing
+        LeftClick 1
+        Delay 2000
+        Rem BP
+        //chain
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\noBullets.bmp",1,nobullet1,nobullet2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\oneBullets.bmp",1,onebullet1,onebullet2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\twoBullets.bmp",1,twobullet1,twobullet2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain1.bmp",1,chain11,chain12)
+        If chain11>0
+            If chain1=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain2.bmp",1,chain21,chain22)
+        If chain21>0
+            If chain2=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain2=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain2=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain2=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain3.bmp",1,chain31,chain32)
+        If chain31>0
+            If chain3=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain3=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain3=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain3=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain4.bmp",1,chain41,chain42)
+        If chain41>0
+            If chain4=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain4=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain4=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain4=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain5.bmp",1,chain51,chain52)
+        If chain51>0
+            If chain5=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain5=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain5=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain5=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain6.bmp",1,chain61,chain62)
+        If chain61>0
+            If chain6=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain6=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain6=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain6=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain7.bmp",1,chain71,chain72)
+        If chain71>0
+            If chain7=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain7=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain7=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain7=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain8.bmp",1,chain81,chain82)
+        If chain81>0
+            If chain8=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain8=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain8=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain8=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain9.bmp",1,chain91,chain92)
+        If chain91>0
+            If chain9=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain9=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain9=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain9=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain10.bmp",1,chain101,chain102)
+        If chain101>0
+            If chain10=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain10=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain10=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain10=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain11.bmp",1,chain111,chain112)
+        If chain111>0
+            If chain1111=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1111=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1111=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1111=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain12.bmp",1,chain121,chain122)
+        If chain121>0
+            If chain1212=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1212=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1212=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1212=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain13.bmp",1,chain131,chain132)
+        If chain131>0
+            If chain1313=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1313=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1313=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1313=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain14.bmp",1,chain141,chain142)
+        If chain141>0
+            If chain1414=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1414=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1414=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1414=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain15.bmp",1,chain151,chain152)
+        If chain151>0
+            If chain1515=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1515=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1515=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1515=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain16.bmp",1,chain161,chain162)
+        If chain161>0
+            If chain1616=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1616=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1616=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1616=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain17.bmp",1,chain171,chain172)
+        If chain171>0
+            If chain1717=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1717=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1717=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1717=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain18.bmp",1,chain181,chain182)
+        If chain181>0
+            If chain1818=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1818=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1818=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1818=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain19.bmp",1,chain191,chain192)
+        If chain191>0
+            If chain1919=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain1919=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain1919=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain1919=1
+                EndIf 
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chain20.bmp",1,chain201,chain202)
+        If chain201>0
+            If chain2020=0
+                If nobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 3
+                    Delay 1000
+                    chain2020=1
+                EndIf 
+                If onebullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 2
+                    Delay 1000
+                    chain2020=1
+                EndIf 
+                If twobullet1>0
+                    //add bullet
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addBullets.bmp",1,add1,add2)
+                    MoveTo add1,add2
+                    LeftClick 1
+                    Delay 1000
+                    chain2020=1
+                EndIf 
+            EndIf 
+        EndIf 
+        //  VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\AMonsterArm.bmp",1,AM1,AM2)
+        //    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\AMonsterHead.bmp",1,AMH1,AMH2)
+        //     VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\AMonsterLeg.bmp",1,AML1,AML2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BMonster.bmp",1,BM1,BM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CMonster.bmp",1,CM1,CM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DMonster.bmp",1,DM1,DM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\EMonster.bmp",1,EM1,EM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\FMonster.bmp",1,FM1,FM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\GMonster.bmp",1,GM1,GM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\HMonster.bmp",1,HM1,HM2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\IMonster.bmp",1,IM1,IM2)
+        //   If AM1>0 or BM1>0 or CM1>0 or AMH1>0 or AML1>0
+        If BM1>0 or CM1>0 or DM1>0 or EM1>0 or FM1>0 or GM1>0 or HM1>0 or IM1>0
+            chain1=0
+            chain2=0
+            chain3=0
+            chain4=0
+            chain5=0
+            chain6=0
+            chain7=0
+            chain8=0
+            chain9=0
+            chain10=0
+            chain1111=0
+            chain1212=0
+            chain1313=0
+            chain1414=0
+            chain1515=0
+            chain1616=0
+            chain1717=0
+            chain1818=0
+            chain1919=0
+            chain2020=0
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CMonster.bmp",1,rubbish1,rubbish2)
+        If rubbish1>0
+            MoveTo rubbish1,rubbish2
+            rubbish=1
+        Else 
+            rubbish=0
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\EMonster.bmp",1,rubbishD1,rubbishD2)
+        If rubbishD1>0
+            MoveTo rubbishD1,rubbishD2
+            rubbishD=1
+        Else 
+            rubbishD=0
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\GMonster.bmp",1,rubbishG1,rubbishG2)
+        If rubbishG1>0
+            MoveTo rubbishG1,rubbishG2
+            rubbishG=1
+        Else 
+            rubbishG=0
+        EndIf 
+        //        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\shoot.bmp",1,shoot1,shoot2)
+        //        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\oneBullet.bmp",1,bp_1,bp_2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\bp3.bmp",1,shoot1,shoot2)
+        If shoot1>0
+            MoveTo shoot1,shoot2
+        EndIf 
+        //           If bp_1>0
+        //             MoveTo bp_1,bp_2
+        //          EndIf
+        //          If shoot1>0 or bp_1>0
+        If shoot1>0
+            //bullets available
+            Delay 2000
+            If rubbish=0 and rubbishD=0 and rubbishG=0 and rubbishI=0
+                LeftClick 1
+                Delay 40000
+            EndIf 
+            //clear touch
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\touch.bmp",1,touch1,touch2)
+            MoveTo touch1,touch2
+            LeftClick 1
+            Delay 5000
+            //chain
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\newBossCome.bmp",1,nbc1,nbc2)
+            If nbc1>0
+                MoveTo nbc1,nbc2
+                LeftClick 1
+                Delay 2000
+            EndIf 
+            If chain11>0 or chain21>0 or chain31>0 or chain41>0 or chain51>0 or chain61>0 or chain71>0 or chain81>0 or chain91>0 or chain101>0 or chain111>0 or chain121>0 or chain131>0 or chain141>0 or chain151>0 or chain161>0 or chain171>0 or chain181>0 or chain191>0 or chain201>0 or nbc1>0
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                MoveTo R,T
+                LeftClick 1
+                Delay 2000
+                Goto BP
+            EndIf 
+            //start back to WALK
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\upward.bmp",1,up1,up2)
+            MoveTo up1,up2
+            For 5
+                LeftClick 1
+            EndFor 
+            Delay 1000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home.bmp",1,home1,home2)
+            If home1>0
+                MoveTo home1,home2
+                LeftClick 1
+            EndIf 
+            Delay 2000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home2.bmp",1,home21,home22)
+            If home21>0
+                MoveTo home21,home22
+                LeftClick 1
+                Delay 2000
+            EndIf 
+            //clubBattle
+            For 100
+                Delay 10
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\clubBattle.bmp",1,battle1,battle2)
+                If battle1>0
+                    MoveTo battle1,battle2
+                    Delay 1800000
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                    MoveTo R,T
+                    LeftClick 1
+                    Delay 3000
+                    Goto AFTERBATTLE
+                EndIf 
+            EndFor 
+            //login
+            For 10
+                Delay 10
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\login.bmp",1,login1,login2)
+                If login1>0
+                    MoveTo login1,login2
+                    LeftClick 1
+                    Delay 3000
+                    LeftClick 1
+                    Delay 3000
+                    Goto AFTERBATTLE
+                EndIf 
+            EndFor 
+            //chain event only
+            //if 100pp then purple event, else reload below
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER.bmp",1,soccer1,soccer2)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER2.bmp",1,soccer21,soccer22)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER3.bmp",1,soccer31,soccer32)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER4.bmp",1,soccer41,soccer42)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER5.bmp",1,soccer51,soccer52)
+            If soccer1>0 or soccer21>0 or soccer31>0 or soccer41>0 or soccer51>0
+                If soccer1>0
+                    MoveTo soccer1,soccer2
+                Else 
+                    MoveTo soccer21,soccer22
+                EndIf 
+                Delay 2000
+                Goto SOCCER
+            EndIf 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM.bmp",1,debug1,debug2)
+            If debug1>0
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM2.bmp",1,debug21,debug22)
+                If debug21>0
+                    MoveTo debug21,debug22
+                    LeftClick 1
+                    Delay 2000
+                    Goto SOCCER
+                EndIf 
+            EndIf 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\downward.bmp",1,down1,down2)
+            MoveTo down1,down2+100
+            LeftClick 1
+            Delay 500
+            MouseWheel -2
+            Delay 1000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chainWalk.bmp",1,chainwalk1,chainwalk2)
+            If chainwalk1>0
+                MoveTo chainwalk1,chainwalk2
+                Delay 2000
+                Goto CHAINWALK
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                MoveTo R,T
+                LeftClick 1
+                Delay 2000
+                If count=75
+                    count=0
+                    Goto INTERNET
+                Else 
+                    count=count+1
+                EndIf 
+                Goto CHAINFIGHT
+            EndIf 
+            //  chain event only
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\purpleEvent.bmp",1,pe1,pe2)
+            MoveTo pe1,pe2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart.bmp",1,es1,es2)
+            MoveTo es1,es2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart2.bmp",1,ese1,ese2)
+            If ese1>0
+                MoveTo ese1,ese2
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+            //add stage2
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage2.bmp",1,addStage21,addStage22)
+            If addStage21>0
+                MoveTo addStage21,addStage22
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+            //add stage2
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage.bmp",1,addStage1,addStage2)
+            If addStage1>0
+                MoveTo addStage1,addStage2
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        Else 
+            Delay 3000
+            //chain
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\newBossCome.bmp",1,nbc1,nbc2)
+            If nbc1>0
+                MoveTo nbc1,nbc2
+                LeftClick 1
+                Delay 2000
+            EndIf 
+            If chain11>0 or chain21>0 or chain31>0 or chain41>0 or chain51>0 or chain61>0 or chain71>0 or chain81>0 or chain91>0 or chain101>0 or chain111>0 or chain121>0 or chain131>0 or chain141>0 or chain151>0 or chain161>0 or chain171>0 or chain181>0 or chain191>0 or chain201>0 or nbc1>0
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                MoveTo R,T
+                LeftClick 1
+                Delay 2000
+                Goto BP
+            EndIf 
+            //start back to WALK
+            Rem UPWARD
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\upward.bmp",1,up1,up2)
+            MoveTo up1,up2
+            For 5
+                LeftClick 1
+            EndFor 
+            Delay 1000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home.bmp",1,home1,home2)
+            If home1>0
+                MoveTo home1,home2
+                LeftClick 1
+                Delay 2000
+            EndIf 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home2.bmp",1,home21,home22)
+            If home21>0
+                MoveTo home21,home22
+                LeftClick 1
+                Delay 2000
+            EndIf 
+            //clubBattle
+            For 100
+                Delay 10
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\clubBattle.bmp",1,battle1,battle2)
+                If battle1>0
+                    MoveTo battle1,battle2
+                    Delay 1800000
+                    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                    MoveTo R,T
+                    LeftClick 1
+                    Delay 3000
+                    Goto AFTERBATTLE
+                EndIf 
+            EndFor 
+            //login
+            For 10
+                Delay 10
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\login.bmp",1,login1,login2)
+                If login1>0
+                    MoveTo login1,login2
+                    LeftClick 1
+                    Delay 3000
+                    LeftClick 1
+                    Delay 3000
+                    Goto AFTERBATTLE
+                EndIf 
+            EndFor 
+            //  chain event only
+            //if 100pp then purple event, else reload below
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER.bmp",1,soccer1,soccer2)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER2.bmp",1,soccer21,soccer22)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER3.bmp",1,soccer31,soccer32)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER4.bmp",1,soccer41,soccer42)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER5.bmp",1,soccer51,soccer52)
+            If soccer1>0 or soccer21>0 or soccer31>0 or soccer41>0 or soccer51>0
+                If soccer1>0
+                    MoveTo soccer1,soccer2
+                Else 
+                    MoveTo soccer21,soccer22
+                EndIf 
+                Delay 2000
+                Goto SOCCER
+            EndIf 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM.bmp",1,debug1,debug2)
+            If debug1>0
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM2.bmp",1,debug21,debug22)
+                If debug21>0
+                    MoveTo debug21,debug22
+                    LeftClick 1
+                    Delay 2000
+                    Goto SOCCER
+                EndIf 
+            EndIf 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\downward.bmp",1,down1,down2)
+            MoveTo down1,down2+100
+            LeftClick 1
+            Delay 500
+            MouseWheel -2
+            Delay 1000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chainWalk.bmp",1,chainwalk1,chainwalk2)
+            If chainwalk1>0
+                MoveTo chainwalk1,chainwalk2
+                Delay 2000
+                Goto CHAINWALK
+            Else 
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                MoveTo R,T
+                LeftClick 1
+                Delay 2000
+                If count=75
+                    count=0
+                    Goto INTERNET
+                Else 
+                    count=count+1
+                EndIf 
+                Goto CHAINFIGHT
+            EndIf 
+            //  chain event only
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\purpleEvent.bmp",1,pe1,pe2)
+            MoveTo pe1,pe2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart.bmp",1,es1,es2)
+            MoveTo es1,es2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart2.bmp",1,ese1,ese2)
+            If ese1>0
+                MoveTo ese1,ese2
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+            //add stage2
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage2.bmp",1,addStage21,addStage22)
+            If addStage21>0
+                MoveTo addStage21,addStage22
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+            //add stage2
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage.bmp",1,addStage1,addStage2)
+            If addStage1>0
+                MoveTo addStage1,addStage2
+                Delay 1000
+                LeftClick 1
+                Delay 3000
+            EndIf 
+        EndIf 
+    Else 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BossFighting.bmp",1,bf1,bf2)
+        If bf1>0
+            MoveTo bf1,bf2
+            LeftClick 1
+            Delay 2000
+            Goto BP
+        EndIf 
+        //chain
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\newBossCome.bmp",1,nbc1,nbc2)
+        If nbc1>0
+            MoveTo nbc1,nbc2
+            LeftClick 1
+            Delay 2000
+        EndIf 
+        If chain11>0 or chain21>0 or chain31>0 or chain41>0 or chain51>0 or chain61>0 or chain71>0 or chain81>0 or chain91>0 or chain101>0 or chain111>0 or chain121>0 or chain131>0 or chain141>0 or chain151>0 or chain161>0 or chain171>0 or chain181>0 or chain191>0 or chain201>0 or nbc1>0
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+            MoveTo R,T
+            LeftClick 1
+            Delay 2000
+            Goto BP
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\upward.bmp",1,up1,up2)
+        MoveTo up1,up2
+        For 5
+            LeftClick 1
+        EndFor 
+        Delay 1000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home.bmp",1,home1,home2)
+        If home1>0
+            MoveTo home1,home2
+            LeftClick 1
+            Delay 2000
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home2.bmp",1,home21,home22)
+        If home21>0
+            MoveTo home21,home22
+            LeftClick 1
+            Delay 2000
+        EndIf 
+        //clubBattle
+        For 100
+            Delay 10
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\clubBattle.bmp",1,battle1,battle2)
+            If battle1>0
+                MoveTo battle1,battle2
+                Delay 1800000
+                VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+                MoveTo R,T
+                LeftClick 1
+                Delay 3000
+                Goto AFTERBATTLE
+            EndIf 
+        EndFor 
+        //login
+        For 10
+            Delay 10
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\login.bmp",1,login1,login2)
+            If login1>0
+                MoveTo login1,login2
+                LeftClick 1
+                Delay 3000
+                LeftClick 1
+                Delay 3000
+                Goto AFTERBATTLE
+            EndIf 
+        EndFor 
+        Rem AFTERBATTLE
+        //  chain event only
+        //if 100pp then purple event, else reload below
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER.bmp",1,soccer1,soccer2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER2.bmp",1,soccer21,soccer22)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER3.bmp",1,soccer31,soccer32)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER4.bmp",1,soccer41,soccer42)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SOCCER5.bmp",1,soccer51,soccer52)
+        If soccer1>0 or soccer21>0 or soccer31>0 or soccer41>0 or soccer51>0
+            If soccer1>0
+                MoveTo soccer1,soccer2
+            Else 
+                MoveTo soccer21,soccer22
+            EndIf 
+            Delay 2000
+            Goto SOCCER
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM.bmp",1,debug1,debug2)
+        If debug1>0
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCLOSEPROGRAM2.bmp",1,debug21,debug22)
+            If debug21>0
+                MoveTo debug21,debug22
+                LeftClick 1
+                Delay 2000
+                Goto SOCCER
+            EndIf 
+        EndIf 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\downward.bmp",1,down1,down2)
+        MoveTo down1,down2+100
+        LeftClick 1
+        Delay 500
+        MouseWheel -2
+        Delay 1000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\chainWalk.bmp",1,chainwalk1,chainwalk2)
+        If chainwalk1>0
+            MoveTo chainwalk1,chainwalk2
+            Delay 2000
+            Goto CHAINWALK
+        Else 
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+            MoveTo R,T
+            LeftClick 1
+            Delay 2000
+            If count=75
+                count=0
+                Goto INTERNET
+            Else 
+                count=count+1
+            EndIf 
+            Goto CHAINFIGHT
+        EndIf 
+        //          chain event only
+        Rem CHAINWALK
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\purpleEvent.bmp",1,pe1,pe2)
+        MoveTo pe1,pe2
+        Delay 1000
+        LeftClick 1
+        Delay 3000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart.bmp",1,es1,es2)
+        MoveTo es1,es2
+        Delay 1000
+        LeftClick 1
+        Delay 3000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart2.bmp",1,ese1,ese2)
+        If ese1>0
+            MoveTo ese1,ese2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+        EndIf 
+        //add stage2
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage2.bmp",1,addStage21,addStage22)
+        If addStage21>0
+            MoveTo addStage21,addStage22
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+        EndIf 
+        //add stage2
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage.bmp",1,addStage1,addStage2)
+        If addStage1>0
+            MoveTo addStage1,addStage2
+            Delay 1000
+            LeftClick 1
+            Delay 3000
+        EndIf 
+    EndIf 
+    //LAST CHECK PP
+    //almost no PP left
+    Delay 3000
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\almostNoWater.bmp",1,water1,water2)
+    If water1>0
+        MoveTo water1,water2
+        LeftClick 1
+        Delay 3000
+    EndIf 
+    //no PP and reload
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\noWater.bmp",1,intG,intH)
+    MoveTo intG,intH
+    If intG>0
+        //no PP-- delay and reload
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\helpMe.bmp",1,help1,help2)
+        MoveTo help1,help2
+        LeftClick 1
+        Delay 3000
+        // Delay 450000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+        MoveTo R,T
+        LeftClick 1
+        Delay 3000
+    EndIf 
+EndFor 
+//FOLLOWING IS TO PROTECT AGAINST INTERNET DISCONNECTION
+Delay 15000
+//start back to WALK
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\reload.bmp",1,R,T)
+MoveTo R,T
+LeftClick 1
+Delay 3000
+Rem INTERNET
+VBSCall FindPic(0,0,500,768,"D:\BIOCodePics\closeBrowser.bmp",1,close1,close2)
+VBSCall FindPic(0,0,500,768,"D:\BIOCodePics\closeBrowser2.bmp",1,close21,close22)
+If close1>0
+    MoveTo close1,close2
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+If close21>0
+    MoveTo close21,close22
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+//Delay 120000
+//-3pp to meet monster
+//Delay 120000
+//-4,5pp to meet monster
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\googleChrome.bmp",1,gc1,gc2)
+MoveTo gc1,gc2
+Delay 1000
+LeftClick 3
+Delay 10000
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\startGame.bmp",1,startgame1,startgame2)
+MoveTo startgame1,startgame2
+Delay 1000
+LeftClick 1
+Delay 3000
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\startGame2.bmp",1,startgame21,startgame22)
+If startgame21>0
+    MoveTo startgame21,startgame22
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\home2.bmp",1,he1,he2)
+MoveTo he1,he2
+Delay 1000
+LeftClick 1
+Delay 5000
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\purpleEvent.bmp",1,pe1,pe2)
+MoveTo pe1,pe2
+Delay 1000
+LeftClick 1
+Delay 3000
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart.bmp",1,es1,es2)
+MoveTo es1,es2
+Delay 1000
+LeftClick 1
+Delay 3000
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\eventStart2.bmp",1,ese1,ese2)
+If ese1>0
+    MoveTo ese1,ese2
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+//add stage2
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage2.bmp",1,addStage21,addStage22)
+If addStage21>0
+    MoveTo addStage21,addStage22
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+//add stage2
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\addStage.bmp",1,addStage1,addStage2)
+If addStage1>0
+    MoveTo addStage1,addStage2
+    Delay 1000
+    LeftClick 1
+    Delay 3000
+EndIf 
+Goto STARTBIO
+//add reloadof protect against internet to uwants, LG picture, correct a-z, levelup picture, treasure order
+//add pictures recapture for me
+//bigboss case
+//2block dead end
+//looping end
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//4-16 chain event modification:
+//add no dead end, default change to go boss instead of looping to A
+//walk and hit 3 case
+//B: walk and hit in 2 min, the time between 2 attempt hits is ok, solve ABC hit problem //solve A case cannot fight by 4 cases
+//C: walk 20 times at last and hit coz only 1pp action force
+//A: walk 0 times (later will walk back) and hit coz 5pp action force
+//ABC all action force and bp won't blast out
+//Only problem with A case is cannot meet the monster at night
+//so at night need to restore some time fr it to meet the monster (no one meet without me!)
+//4-23 solve can't meet boss (A case won't happen) by using skip move) so that hitwalk constantly and won't blast bp and action force + can meet monster
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//4-18 modification: chain fight
+//search no bullets, chain pictures to get no bullets, chain monster condition plus chain monster repeat condition
+//if satisfy 3 condition [tested: satisfy 3 condition then add bullets; no bullets but A then no add bullets;( should be )chain but bullets then no add bullets]
+//add bullets and set to 1
+//if meet A monster, set back to 0 [tested: add bullet and then won't repeat add bullet on same target; (should be)l later add back after meet AMonster
+//4-18 modification: 1bp 2bp3bp
+//1pp 2bp 3bp shoot [tested all can shoot]
+////////////////////////////////////////////////////////////////////////////////////
+//a&b-->c prove it is right by a&!b-->!c, !a&b-->!c, !a&!b-->!c
+Rem SOCCER
+Beep 
+Delay 2000
+//closeBrowser
+Delay 2000
+VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TCLOSEBROWSER.bmp",1,TClosebrowser1,TClosebrowser2)
+If TClosebrowser1>0
+    MoveTo TClosebrowser1,TClosebrowser2
+    LeftClick 1
+    Delay 2000
+EndIf 
+//openBrowser
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\IE.bmp",1,Tie1,Tie2)
+If Tie1>0
+    MoveTo Tie1,Tie2
+    LeftClick 1
+    Delay 40000
+EndIf 
+VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TMAX.bmp",1,TMax1,TMax2)
+If TMax1>0
+    MoveTo TMax1,TMax2
+    LeftClick 1
+    Delay 2000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\START.bmp",1,Tstart1,Tstart2)
+If Tstart1>0
+    MoveTo Tstart1,Tstart2
+    LeftClick 1
+    Delay 10000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TDownward.bmp",1,Tdownward1,Tdownward2)
+If Tdownward1>0
+    MoveTo Tdownward1,Tdownward2
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCONTINUESTART.bmp",1,TStartgame41,TStartgame42)
+If TStartgame41>0
+    MoveTo TStartgame41,TStartgame42
+    LeftClick 1
+    Beep 
+    Beep 
+    Delay 5000
+    Goto SIM
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN.bmp",1,TLogin1,TLogin2)
+If TLogin1>0
+    MoveTo TLogin1,TLogin2
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN2.bmp",1,TLogin21,TLogin22)
+If TLogin21>0
+    MoveTo TLogin21,TLogin22
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN3.bmp",1,TLogin31,TLogin32)
+If TLogin31>0
+    MoveTo TLogin31,TLogin32
+    LeftClick 1
+    Delay 5000
+EndIf 
+Rem SOCCERNEXT
+For 10
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TNEXT.bmp",1,TNext1,TNext2)
+    If TNext1>0
+        MoveTo TNext1,TNext2
+        LeftClick 1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 2000
+    EndIf 
+EndFor 
+Delay 10000
+//EVENT
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TEVENT.bmp",1,TEvent1,TEvent2)
+If TEvent1>0
+    MoveTo TEvent1,TEvent2
+    LeftClick 1
+    Delay 5000
+EndIf 
+For 12
+    //fever
+    For 100
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TFEVER.bmp",1,TFever1,TFever2)
+        Delay 10
+        If TFever1>0
+            Goto FOUND
+        EndIf 
+    EndFor 
+    Rem FOUND
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TKILLSHOT.bmp",1,TKillshot1,TKillshot2)
+    If TFever1>0 and TKillshot1>0
+        MoveTo TKillshot1,TKillshot2
+        LeftClick 1
+        MoveTo 0,0
+        Delay 10000
+    Else 
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TSHOOT.bmp",1,TShoot1,TShoot2)
+        If TShoot1>0
+            MoveTo TShoot1,TShoot2
+            LeftClick 1
+            MoveTo 0,0
+            Delay 5000
+        EndIf 
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBONUS.bmp",1,TBonus1,TBonus2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBONUS2.bmp",1,TBonus21,TBonus22)
+    If TBonus1>0 or TBonus21>0
+        If TBonus1>0
+            MoveTo TBonus1,TBonus2
+        Else 
+            MoveTo TBonus21,TBonus22
+        EndIf 
+        LeftClick 1
+        MoveTo 0,0
+        Delay 2000
+    EndIf 
+    Beep 
+EndFor 
+Rem WATER
+//PREPARE CHECK TIME
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TWATER.bmp",1,TWater1,TWater2)
+If TWater1>0
+    MoveTo TWater1,TWater2
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TXEVENT.bmp",1,TXEvent1,TXEvent2)
+If TXEvent1>0
+    MoveTo TXEvent1,TXEvent2
+    LeftClick 1
+    Delay 10000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TMIN.bmp",1,TMin1,TMin2)
+If TMin1>0
+    MoveTo TMin1,TMin2
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TMIN2.bmp",1,TMin21,TMin22)
+If TMin21>0
+    MoveTo TMin21,TMin22
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RIGHT.bmp",1,TRight1,TRight2)
+If TRight1>0
+    MoveTo TRight1,TRight2
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+EndIf 
+Goto STARTBIO

@@ -1,0 +1,825 @@
+[General]
+Description=SOCCERSimGame
+BeginHotkey=121
+BeginHotkeyMod=0
+PauseHotkey=0
+PauseHotkeyMod=0
+StopHotkey=123
+StopHotkeyMod=0
+RunOnce=1
+EnableWindow=
+Enable=1
+AutoRun=0
+[Repeat]
+Type=0
+Number=10
+[Relative]
+SetupOCXFile=
+[Comment]
+Content=
+
+[Script]
+Rem SOCCER
+Beep 
+Delay 2000
+//closeBrowser
+Delay 2000
+VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TCLOSEBROWSER.bmp",1,TClosebrowser1,TClosebrowser2)
+VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TCLOSEBROWSER2.bmp",1,TClosebrowser31,TClosebrowser32)
+If TClosebrowser1>0 or TClosebrowser31>0
+    If TClosebrowser1>0
+        MoveTo TClosebrowser1,TClosebrowser2-20
+    Else 
+        MoveTo TClosebrowser31,TClosebrowser32-20
+    EndIf 
+    LeftClick 1
+    Delay 2000
+EndIf 
+//openBrowser
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\IE.bmp",1,Tie1,Tie2)
+If Tie1>0
+    MoveTo Tie1,Tie2
+    LeftClick 1
+    Delay 40000
+EndIf 
+VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TMAX.bmp",1,TMax1,TMax2)
+If TMax1>0
+    MoveTo TMax1,TMax2
+    LeftClick 1
+    Delay 2000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\START.bmp",1,Tstart1,Tstart2)
+If Tstart1>0
+    MoveTo Tstart1,Tstart2
+    LeftClick 1
+    Delay 10000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TDownward.bmp",1,Tdownward1,Tdownward2)
+If Tdownward1>0
+    MoveTo Tdownward1,Tdownward2
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN.bmp",1,TLogin1,TLogin2)
+If TLogin1>0
+    MoveTo TLogin1,TLogin2
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN2.bmp",1,TLogin21,TLogin22)
+If TLogin21>0
+    MoveTo TLogin21,TLogin22
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TLOGIN3.bmp",1,TLogin31,TLogin32)
+If TLogin31>0
+    MoveTo TLogin31,TLogin32
+    LeftClick 1
+    Delay 5000
+EndIf 
+Rem SOCCERNEXT
+For 10
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TNEXT.bmp",1,TNext1,TNext2)
+    If TNext1>0
+        MoveTo TNext1,TNext2
+        LeftClick 1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 2000
+    EndIf 
+EndFor 
+Delay 10000
+//EVENT
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TEVENT.bmp",1,TEvent1,TEvent2)
+If TEvent1>0
+    MoveTo TEvent1,TEvent2
+    LeftClick 1
+    Delay 5000
+EndIf 
+For 10
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TCONTINUESTART.bmp",1,TStartgame41,TStartgame42)
+    If TStartgame41>0
+        MoveTo TStartgame41,TStartgame42
+        LeftClick 1
+        Beep 
+        Beep 
+        Delay 5000
+        Goto SIM
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\T80.bmp",1,T801,T802)
+    If T801>0
+        MoveTo T801,T802
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TCLOSEBROWSER2.bmp",1,TClosebrowser21,TClosebrowser22)
+        If TClosebrowser21>0
+            MoveTo TClosebrowser21,TClosebrowser22-50
+            LeftClick 1
+            Delay 2000
+        EndIf 
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\T81.bmp",1,T811,T812)
+    If T811>0
+        MoveTo T811,T812
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(500,0,1024,768,"D:\BIOCodePics\TCLOSEBROWSER2.bmp",1,TClosebrowser21,TClosebrowser22)
+        If TClosebrowser21>0
+            MoveTo TClosebrowser21,TClosebrowser22-50
+            LeftClick 1
+            Delay 2000
+        EndIf 
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\T70.bmp",1,T701,T702)
+    If T701>0
+        MoveTo T701,702
+        Delay 1000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RUSH.bmp",1,rush1,rush2)
+        If rush1>0
+            MoveTo rush1,rush2
+            //   LeftClick 1
+            Delay 5000
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RUSHYES.bmp",1,rushyes1,rushyes2)
+            If rushyes1>0
+                MoveTo rushyes1,rushyes2
+                LeftClick 1
+                Delay 5000
+            EndIf 
+        EndIf 
+    EndIf 
+    dim midfieldsub
+    dim defendersub
+    dim forwardsub
+    dim keepersub
+    Delay 5000
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TSTARTGAME2.bmp",1,TStartgame21,TStartgame22)
+    If TStartgame21>0
+        MoveTo TStartgame21,TStartgame22
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TSTARTGAME.bmp",1,TStartgame1,TStartgame2)
+    If TStartgame1>0
+        MoveTo TStartgame1,TStartgame2
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TSTARTGAME3.bmp",1,TStartgame31,TStartgame32)
+    If TStartgame31>0
+        MoveTo TStartgame31,TStartgame32
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TFORWARDGAME.bmp",1,TForwardgame1,TForwardgame2)
+    If TForwardgame1>0
+        MoveTo TForwardgame1,TForwardgame2
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TEIGHT.bmp",1,T81,T82)
+    If T81>0
+        MoveTo T81,T82
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 3000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\REDCARDYES.bmp",1,RC1,RC2)
+    If RC1>0
+        MoveTo RC1,RC2
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 3000
+    EndIf 
+    //status-striker
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TIGAR.bmp",1,tigarRed1,tigarRed2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DRAGON.bmp",1,dragonYellow1,dragonYellow2)
+    If tigarRed1>0
+        If dragonYellow1>0
+            //  forwardsub=1
+            forwardsub=0
+        EndIf 
+    EndIf 
+    //status-midfield1
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCK.bmp",1,duckRed1,duckRed2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWN.bmp",1,crownRed1,crownRed2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIU.bmp",1,chiuYellow1,chiuYellow2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDO.bmp",1,saidoYellow1,saidoYellow2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WING.bmp",1,wingYellow1,wingYellow2)
+    If crownRed1>0 and duckRed>0
+        If chiuYellow1>0 and saidoYellow1>0
+            //  midfieldsub=7
+            midfieldsub=0
+        EndIf 
+        // If chiuYellow1>0 and wingYellow1>0
+        If wingYellow1>0
+            midfieldsub=8
+            //midfieldsub=0
+        EndIf 
+        If saidoYellow1>0 and wingYellow1>0
+            // midfieldsub=9
+            midfieldsub=0
+        EndIf 
+    Else 
+        //status-midfield2
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWN.bmp",1,crownRed1,crownRed2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIU.bmp",1,chiuYellow1,chiuYellow2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDO.bmp",1,saidoYellow1,saidoYellow2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WING.bmp",1,wingYellow1,wingYellow2)
+        If crownRed1>0
+            If chiuYellow1>0 or saidoYellow1>0 or wingYellow1>0
+                If chiuYellow1>0
+                    //midfieldsub=1
+                    midfieldsub=0
+                Else 
+                    If saidoYellow1>0
+                        // midfieldsub=2
+                        midfieldsub=0
+                    Else 
+                        If wingYellow1>0
+                            midfieldsub=3
+                        EndIf 
+                    EndIf 
+                EndIf 
+            EndIf 
+        Else 
+            //status-midfield3
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCK.bmp",1,duckRed1,duckRed2)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIU.bmp",1,chiuYellow1,chiuYellow2)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDO.bmp",1,saidoYellow1,saidoYellow2)
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WING.bmp",1,wingYellow1,wingYellow2)
+            If duckRed1>0
+                If chiuYellow1>0 or saidoYellow1>0 or wingYellow1>0
+                    If chiuYellow1>0
+                        //  midfieldsub=4
+                        midfieldsub=0
+                    Else 
+                        If saidoYellow1>0
+                            // midfieldsub=5
+                        Else 
+                            If wingYellow1>0
+                                midfieldsub=6
+                            EndIf 
+                        EndIf 
+                    EndIf 
+                EndIf 
+            EndIf 
+        EndIf 
+    EndIf 
+    //status-defender
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BAN.bmp",1,banRed1,banRed2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\LEUNG.bmp",1,leungYellow1,leungYellow2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\FLOOR.bmp",1,floorYellow1,floorYellow2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RED.bmp",1,redYellow1,redYellow2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\KITCHEN.bmp",1,kitYellow1,kitYellow2)
+    If banRed1>0
+        If leungYellow1>0 or floorYellow1>0 or redYellow1>0 or kitYellow1>0
+            If redYellow1>0
+                defendersub=1
+            Else 
+                If floorYellow1>0
+                    defendersub=2
+                Else 
+                    If leungYellow1>0
+                        defendersub=3
+                    Else 
+                        If kitYellow1>0
+                            defendersub=4
+                        EndIf 
+                    EndIf 
+                EndIf 
+            EndIf 
+        EndIf 
+    EndIf 
+    //status-keeper
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\MULLER.bmp",1,mullerRed1,mullerRed2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\YUEN.bmp",1,yuenYellow1,yuenYellow2)
+    If mullerRed1>0
+        If yuenYellow1>0
+            keepersub=1
+        EndIf 
+    EndIf 
+    //statusEnd
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TTRYSTART.bmp",1,TTrystart1,TTrystart2)
+    If TTrystart1>0
+        MoveTo TTrystart1,TTrystart2
+        LeftClick 1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 5000
+    EndIf 
+    //redcard
+    VBSCall FindPic(400,220,492,297,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DRAGONNAME.bmp",1,Dragonname1,Dragonname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SNEIDARLOOK.bmp",1,Sneidarlook1,Sneidarlook2)
+        If Dragonname1>0
+            MoveTo Dragonname1,Dragonname2
+            LeftDown 1
+            MoveTo Sneidarlook1+1,Sneidarlook2+1
+            Delay 1000
+            MoveTo Sneidarlook1,Sneidarlook2
+            LeftUp 1
+            Delay 5000
+            forwardsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(497,210,602,296,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DRAGONNAME.bmp",1,Dragonname1,Dragonname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TIGARLOOK.bmp",1,Tigarlook1,Tigarlook2)
+        If Dragonname1>0
+            MoveTo Dragonname1,Dragonname2
+            LeftDown 1
+            MoveTo Tigarlook1+1,Tigarlook2+1
+            Delay 1000
+            MoveTo Tigarlook1,Tigarlook2
+            LeftUp 1
+            Delay 5000
+            forwardsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(280,298,380,383,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIULOOK.bmp",1,Chiulook1,Chiulook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Chiulook1+1,Chiulook2+1
+            Delay 1000
+            MoveTo Chiulook1,Chiulook2
+            LeftUp 1
+            Delay 5000
+            midfieldsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(381,304,489,385,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\LEVENLOOK.bmp",1,Levenlook1,Levenlook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Levenlook1+1,Levenlook2+1
+            Delay 1000
+            MoveTo Levenlook1,Levenlook2
+            LeftUp 1
+            Delay 5000
+            midfieldsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(494,307,607,386,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RIVALDOLOOK.bmp",1,Rivaldolook1,Rivaldolook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Rivaldolook1+1,Rivaldolook2+1
+            Delay 1000
+            MoveTo Rivaldolook1,Rivaldolook2
+            LeftUp 1
+            Delay 5000
+            midfieldsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(605,308,711,381,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WINGLOOK.bmp",1,Winglook1,Winglook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Winglook1+1,Winglook2+1
+            Delay 1000
+            MoveTo Winglook1,Winglook2
+            LeftUp 1
+            Delay 5000
+            midfieldsub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(277,398,381,471,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\REDLOOK.bmp",1,Redlook1,Redlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Redlook1+1,Redlook2+1
+            Delay 1000
+            MoveTo Redlook1,Redlook2
+            LeftUp 1
+            Delay 5000
+            defendersub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(384,399,493,470,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\LEUNGLOOK.bmp",1,Leunglook1,Leunglook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Leunglook1+1,Leunglook2+1
+            Delay 1000
+            MoveTo Leunglook1,Leunglook2
+            LeftUp 1
+            Delay 5000
+            defendersub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(495,398,605,471,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\KITCHENLOOK.bmp",1,Kitchenlook1,Kitchenlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Kitchenlook1+1,Kitchenlook2+1
+            Delay 1000
+            MoveTo Kitchenlook1,Kitchenlook2
+            LeftUp 1
+            Delay 5000
+            defendersub=0
+        EndIf 
+    EndIf 
+    VBSCall FindPic(606,398,716,469,"D:\BIOCodePics\R1.bmp",1,R1,R2)
+    If R1>0
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\FLOORLOOK.bmp",1,Floorlook1,Floorlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Floorlook1+1,Floorlook2+1
+            Delay 1000
+            MoveTo Floorlook1,Floorlook2
+            LeftUp 1
+            Delay 5000
+            defendersub=0
+        EndIf 
+    EndIf 
+    //sub
+    If forwardsub=1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TIGARNAME.bmp",1,Tigarname1,Tigarname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DRAGONLOOK.bmp",1,Dragonlook1,Dragonlook2)
+        If Tigarname1>0
+            MoveTo Tigarname1,Tigarname2
+            LeftDown 1
+            MoveTo Dragonlook1+1,Dragonlook2+1
+            Delay 1000
+            MoveTo Dragonlook1,Dragonlook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIULOOK.bmp",1,Chiulook1,Chiulook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Chiulook1+1,Chiulook2+1
+            Delay 1000
+            MoveTo Chiulook1,Chiulook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=2
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDOLOOK.bmp",1,Saidolook1,Saidolook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Saidolook1+1,Saidolook2+1
+            Delay 1000
+            MoveTo Saidolook1,Saidolook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=3
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WINGLOOK.bmp",1,Winglook1,Winglook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Winglook1+1,Winglook2+1
+            Delay 1000
+            MoveTo Winglook1,Winglook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=4
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIULOOK.bmp",1,Chiulook1,Chiulook2)
+        If Duckname1>0
+            MoveTo Duckname1,Duckname2
+            LeftDown 1
+            MoveTo Chiulook1+1,Chiulook2+1
+            Delay 1000
+            MoveTo Chiulook1,Chiulook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=5
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDOLOOK.bmp",1,Saidolook1,Saidolook2)
+        If Duckname1>0
+            MoveTo Duckname1,Duckname2
+            LeftDown 1
+            MoveTo Saidolook1+1,Saidolook2+1
+            Delay 1000
+            MoveTo Saidolook1,Saidolook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=6
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WINGLOOK.bmp",1,Winglook1,Winglook2)
+        If Duckname1>0
+            MoveTo Duckname1,Duckname2
+            LeftDown 1
+            MoveTo Winglook1+1,Winglook2+1
+            Delay 1000
+            MoveTo Winglook1,Winglook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=7
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIULOOK.bmp",1,Chiulook1,Chiulook2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDOLOOK.bmp",1,Saidolook1,Saidolook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Chiulook1+1,Chiulook2+1
+            Delay 1000
+            MoveTo Chiulook1,Chiulook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+        If Duckname1>0
+            MoveTo Duckname1,Duckname2
+            LeftDown 1
+            MoveTo Saidolook1+1,Saidolook2+1
+            Delay 1000
+            MoveTo Saidolook1,Saidolook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If midfieldsub=8
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CHIULOOK.bmp",1,Chiulook1,Chiulook2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WINGLOOK.bmp",1,Winglook1,Winglook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Winglook1+1,Winglook2+1
+            Delay 1000
+            MoveTo Winglook1,Winglook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+        //  If Duckname1>0
+        //    MoveTo Duckname1,Duckname2
+        //    LeftDown 1
+        //    MoveTo Winglook1+1,Winglook2+1
+        //    Delay 1000
+        //    MoveTo Winglook1,Winglook2
+        //     LeftUp 1
+        //     Delay 5000
+        //        EndIf
+    EndIf 
+    If midfieldsub=9
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\CROWNNAME.bmp",1,Crownname1,Crownname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\SAIDOLOOK.bmp",1,Saidolook1,Saidolook2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\DUCKNAME.bmp",1,Duckname1,Duckname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\WINGLOOK.bmp",1,Winglook1,Winglook2)
+        If Crownname1>0
+            MoveTo Crownname1,Crownname2
+            LeftDown 1
+            MoveTo Saidolook1+1,Saidolook2+1
+            Delay 1000
+            MoveTo Saidolook1,Saidolook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+        If Duckname1>0
+            MoveTo Duckname1,Duckname2
+            LeftDown 1
+            MoveTo Winglook1+1,Winglook2+1
+            Delay 1000
+            MoveTo Winglook1,Winglook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If defendersub=1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\REDLOOK.bmp",1,Redlook1,Redlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Redlook1+1,Redlook2+1
+            Delay 1000
+            MoveTo Redlook1,Redlook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If defendersub=2
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\FLOORLOOK.bmp",1,Floorlook1,Floorlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Floorlook1+1,Floorlook2+1
+            Delay 1000
+            MoveTo Floorlook1,Floorlook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If defendersub=3
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\LEUNGLOOK.bmp",1,Leunglook1,Leunglook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Leunglook1+1,Leunglook2+1
+            Delay 1000
+            MoveTo Leunglook1,Leunglook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If defendersub=4
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\BANNAME.bmp",1,Banname1,Banname2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\KITCHENLOOK.bmp",1,Kitchenlook1,Kitchenlook2)
+        If Banname1>0
+            MoveTo Banname1,Banname2
+            LeftDown 1
+            MoveTo Kitchenlook1+1,Kitchenlook2+1
+            Delay 1000
+            MoveTo Kitchenlook1,Kitchenlook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    If keepersub=1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\MULLERNAME.bmp",1,Mullername1,Mullername2)
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\YUENLOOK.bmp",1,Yuenlook1,Yuenlook2)
+        If Mullername1>0
+            MoveTo Mullername1,Mullername2
+            LeftDown 1
+            MoveTo Yuenlook1+1,Yuenlook2+1
+            Delay 1000
+            MoveTo Yuenlook1,Yuenlook2
+            LeftUp 1
+            Delay 5000
+        EndIf 
+    EndIf 
+    keepersub=0
+    defendersub=0
+    midfieldsub=0
+    forwardsub=0
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+    If Tb1>0
+        MoveTo Tb1,Tb2
+        Delay 2000
+    EndIf 
+    //subEnd
+    Rem SIM
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TSIM.bmp",1,TSim1,TSim2)
+    If TSim1>0
+        MoveTo TSim1,TSim2
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TYES.bmp",1,TYes1,TYes2)
+    If TYes1>0
+        MoveTo TYes1,TYes2
+        LeftClick 1
+        Delay 10000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\REDCARDYES2.bmp",1,RC21,RC22)
+    If RC21>0
+        MoveTo RC21,RC22
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TPKWINOK.bmp",1,TPW1,TPW2)
+    If TPW1>0
+        MoveTo TPW1,TPW2
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 3000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TOK.bmp",1,TOk1,TOk2)
+    If TOk1>0
+        MoveTo TOk1,TOk2
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 3000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TOK2.bmp",1,TOk21,TOk22)
+    If TOk21>0
+        MoveTo TOk21,TOk22
+        LeftClick 1
+        Delay 5000
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 3000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TVBONUS.bmp",1,TBonus1,TBonus2)
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TVBONUS2.bmp",1,TBonus21,TBonus22)
+    If TBonus1>0 or TBonus21>0
+        If TBonus1>0
+            MoveTo TBonus1,TBonus2
+        Else 
+            MoveTo TBonus21,TBonus22
+        EndIf 
+        LeftClick 1
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+        MoveTo Tb1,Tb2
+        Delay 2000
+    EndIf 
+    VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TVICTORYBONUS.bmp",1,TVB1,TVB2)
+    If TVB1>0
+        MoveTo TVB1,TVB2
+        LeftClick 1
+        Delay 5000
+    EndIf 
+    Beep 
+    For 10
+        VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TNEXT.bmp",1,TNext1,TNext2)
+        If TNext1>0
+            MoveTo TNext1,TNext2
+            LeftClick 1
+            VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TBLANK.bmp",1,Tb1,Tb2)
+            MoveTo Tb1,Tb2
+            Delay 3000
+            Goto SOCCERNEXT
+        EndIf 
+    EndFor 
+EndFor 
+Rem WATER
+//PREPARE CHECK TIME
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TWATER.bmp",1,TWater1,TWater2)
+If TWater1>0
+    MoveTo TWater1,TWater2
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TXEVENT.bmp",1,TXEvent1,TXEvent2)
+If TXEvent1>0
+    MoveTo TXEvent1,TXEvent2
+    LeftClick 1
+    Delay 10000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TMIN.bmp",1,TMin1,TMin2)
+If TMin1>0
+    MoveTo TMin1,TMin2-45
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\TMIN2.bmp",1,TMin21,TMin22)
+If TMin21>0
+    MoveTo TMin21,TMin22-45
+    LeftClick 1
+    Delay 5000
+EndIf 
+VBSCall FindPic(0,0,1024,768,"D:\BIOCodePics\RIGHT.bmp",1,TRight1,TRight2)
+If TRight1>0
+    MoveTo TRight1,TRight2
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+    LeftClick 1
+    Delay 3000
+EndIf 
+Goto CHAINFIGHT
